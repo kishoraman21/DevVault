@@ -111,6 +111,34 @@ graph TD
     style Path3 fill:#000000,stroke:#e2e8f0,stroke-dasharray: 5 5
 ```
 
+### 🐳 Docker Quickstart
+
+You can also run DevVault using Docker. Choose one of the following methods:
+
+#### Option 1: Using Docker Hub (Direct Pull)
+```bash
+# Pull the image
+docker pull kishoraman/devvault
+
+# Run the container (Make sure to pass your environment variables)
+docker run -p 3000:3000 \
+  -e MONGODB_URI="your_mongodb_uri" \
+  -e RAZORPAY_KEY_ID="your_razorpay_key" \
+  -e RAZORPAY_KEY_SECRET="your_razorpay_secret" \
+  -e MAIL_USER="your_email" \
+  -e MAIL_PASS="your_app_password" \
+  -e GEMINI_API_KEY="your_gemini_key" \
+  -e BASE_URL="http://localhost:3000" \
+  kishoraman/devvault
+```
+
+#### Option 2: Using Docker Compose (Recommended)
+If you have cloned the repo, you can simply run:
+```bash
+docker-compose up -d
+```
+*Note: Ensure your `.env` file is configured before running docker-compose.*
+
 ---
 
 ## 📂 Folder Structure
